@@ -1,4 +1,4 @@
-class API::V1::SubscriptionsController < ApplicationController
+class Api::V1::SubscriptionsController < ApplicationController
   def index
     customer = Customer.find(params[:customer_id])
     supscriptions = Subscription.all_subscriptions(customer)
@@ -8,9 +8,9 @@ class API::V1::SubscriptionsController < ApplicationController
   def create
     subscription = Subscription.new(subscription_params)
     if subscription.save
-      #success code
+      render json: { response: 'Subscription created!' }, status: :created
     else
-      #failure code
+      render json: { error: "Missing data." }, status: :bad_request
     end 
   end 
 
@@ -21,9 +21,13 @@ class API::V1::SubscriptionsController < ApplicationController
 
   private
 
+  # def subscription_params
+  #   params.permit(:title, :price, :status, :frequency, :quantity, :customer_id, :tea_id)
+  # end 
+
   def subscription_params
-    params.permit(:title, :price, :status, :frequency, :quantity, :customer_id, :tea_id)
-  end 
+    params.require(:subscription).permit(:title, :price, :status, :frequency, :quantity, :customer_id, :tea_id)
+  end
 end 
 
 
