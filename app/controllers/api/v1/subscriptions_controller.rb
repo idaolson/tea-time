@@ -15,9 +15,17 @@ class Api::V1::SubscriptionsController < ApplicationController
   end 
 
   def update
-
-
-  end 
+    subscription = Subscription.find(params[:id])
+    if subscription.status == "active"
+      subscription.update(status: "cancelled")
+      render json: { response: 'Subscription cancelled' }, status: :accepted
+    elsif subscription.status == "cancelled"
+      subscription.update(status: "active")
+      render json: { response: 'Subscription active' }, status: :accepted 
+    else 
+      render json: { response: 'Subscription not found' }, status: :bad_request
+    end 
+  end  
 
   private
 
