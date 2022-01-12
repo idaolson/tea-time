@@ -2,9 +2,6 @@
 
 # Tea Time [![CircleCI](https://circleci.com/gh/idaolson/tea-time/tree/main.svg?style=shield)](https://app.circleci.com/pipelines/github/idaolson/tea-time)
 
-# Sweater Weather  
-
-
 ## Table of contents
 * [Contributor](#contributor)
 * [Description](#description)
@@ -20,6 +17,8 @@
 
 
 ## Description
+
+Rails API for a Tea Subscription Service
 
 
 ## Schema
