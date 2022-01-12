@@ -10,6 +10,7 @@
 * [Requirements](#requirements)
 * [Setup](#setup)
 * [Tools Used](#tools-used)
+* [Project Board](#project-board)
 
 
 ## Contributor
@@ -84,3 +85,6 @@ Rails API for a Tea Subscription Service
 | JSON:API Serializer |                 |
 |                     |                 |
 
+## Project Board
+
+[Tea Time Service](https://github.com/users/idaolson/projects/1)
