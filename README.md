@@ -6,6 +6,7 @@
 * [Contributor](#contributor)
 * [Description](#description)
 * [Database Schema](#schema)
+* [Endpoints](#endpoints)
 * [Requirements](#requirements)
 * [Setup](#setup)
 * [Tools Used](#tools-used)
@@ -26,7 +27,33 @@ Rails API for a Tea Subscription Service
 
 ![tea_time_schema](https://user-images.githubusercontent.com/81930253/149042430-45bbf67b-d1ae-4dd4-8c23-dea3f1969032.jpg)
 
+## Endpoints
 
+### Create a new subscription: 
+
+   - POST     /api/v1/subscriptions
+   - Body of request: 
+   
+   ```json
+   {
+       "title": "My weekly oolong",
+       "price": 7.99,
+       "status": "active",
+       "frequency": 7,
+       "quantity": 2,
+       "customer_id": 1,
+       "tea_id": 2
+   }
+   
+   ```
+
+### Cancel a subscription: 
+
+  - PATCH    /api/v1/subscriptions/:id
+
+### Get all subscriptions for a customer: 
+
+  - GET      /api/v1/customers/:customer_id/subscriptions
 
 ## Requirements
 - Rails 5.2.5
