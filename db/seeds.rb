@@ -5,7 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Subscription.destroy_all
+Customer.destroy_all
+Tea.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('subscriptions')
+ActiveRecord::Base.connection.reset_pk_sequence!('customers')
+ActiveRecord::Base.connection.reset_pk_sequence!('teas')
 Customer.create!(first_name: 'Ida', last_name: 'Olson', email: 'idao@email.com', address: '1108 Ichabod St, North Pole, AK 99705')
 Customer.create!(first_name: 'Sarah', last_name: 'Carter', email: 'sarahc@email.com', address: '1300 Becky St, North Pole, AK 99705')
 Customer.create!(first_name: 'Doug', last_name: 'Olson', email: 'dougo@email.com', address: '2591 Garnet Dr, North Pole, AK 99705')
