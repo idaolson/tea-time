@@ -10,7 +10,7 @@ class Api::V1::SubscriptionsController < ApplicationController
     if subscription.save
       render json: { response: 'Subscription created!' }, status: :created
     else
-      render json: { error: "Missing data." }, status: :bad_request
+      render json: { error: "Missing data" }, status: :bad_request
     end 
   end 
 
