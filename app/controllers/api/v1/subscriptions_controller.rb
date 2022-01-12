@@ -2,7 +2,6 @@ class Api::V1::SubscriptionsController < ApplicationController
   def index
     customer = Customer.find_by(id: params[:customer_id])
     subscriptions = customer.subscriptions
-  
     render json: SubscriptionSerializer.new(subscriptions)
   end 
 
