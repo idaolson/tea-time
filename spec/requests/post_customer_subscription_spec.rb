@@ -45,18 +45,3 @@ RSpec.describe "Post subscription endpoint" do
     expect(result[:error]).to eq("Missing data")
   end 
 end 
-
-
-# expect(response).to be_successful
-# expect(result).to be_a(Hash)
-# expect(result[:data]).to be_a(Hash)
-# expect(result[:data][:id]).to eq(nil)
-# expect(result[:data][:type]).to eq('road_trip')
-# expect(result[:data]).to have_key(:attributes)
-# expect(result[:data][:attributes].size).to eq(4)
-# expect(result[:data][:attributes]).to have_key(:start_city)
-# expect(result[:data][:attributes]).to have_key(:end_city)
-# expect(result[:data][:attributes]).to have_key(:travel_time)
-# expect(result[:data][:attributes]).to have_key(:weather_at_eta)
-# expect(result[:data][:attributes][:weather_at_eta]).to have_key(:temperature)
-# expect(result[:data][:attributes][:weather_at_eta]).to have_key(:conditions)
