@@ -81,6 +81,52 @@ Rails API for a Tea Subscription Service
 ### Get all subscriptions for a customer: 
 
   - GET      /api/v1/customers/:customer_id/subscriptions
+  
+  - Successful response - 200 OK
+
+   ```json
+   {
+    "data": [
+        {
+            "id": "1",
+            "type": "subscription",
+            "attributes": {
+                "title": "My weekly oolong",
+                "price": 7.99,
+                "status": "active",
+                "frequency": 7,
+                "quantity": 2,
+                "tea_id": 2
+            }
+        },
+        {
+            "id": "2",
+            "type": "subscription",
+            "attributes": {
+                "title": "Green tea me",
+                "price": 10.99,
+                "status": "active",
+                "frequency": 14,
+                "quantity": 3,
+                "tea_id": 3
+            }
+        },
+        {
+            "id": "3",
+            "type": "subscription",
+            "attributes": {
+                "title": "Chai in the sky",
+                "price": 25.99,
+                "status": "cancelled",
+                "frequency": 30,
+                "quantity": 1,
+                "tea_id": 1
+            }
+        }
+      ]
+   }
+   
+   ```
 
 ## Requirements
 - Rails 5.2.5
