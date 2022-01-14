@@ -22,16 +22,10 @@ class Api::V1::SubscriptionsController < ApplicationController
     elsif subscription.status == "cancelled"
       subscription.update(status: "active")
       render json: { response: 'Subscription active' }, status: :accepted 
-    else 
-      render json: { response: 'Subscription not found' }, status: :bad_request
     end 
   end  
 
   private
-
-  # def subscription_params
-  #   params.permit(:title, :price, :status, :frequency, :quantity, :customer_id, :tea_id)
-  # end 
 
   def subscription_params
     params.require(:subscription).permit(:title, :price, :status, :frequency, :quantity, :customer_id, :tea_id)
