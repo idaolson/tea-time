@@ -61,9 +61,22 @@ Rails API for a Tea Subscription Service
    }
    ```
    
-### Cancel a subscription: 
+### Cancel/Activate a subscription: 
 
   - PATCH    /api/v1/subscriptions/:id
+   
+   - Successful cancellation - 202 Accepted
+   ```json
+   {
+      "response": "Subscription cancelled"
+   }
+   ```
+   - Successful activation - 202 Accepted
+   ```json
+   {
+      "response": "Subscription active"
+   }
+   ```
 
 ### Get all subscriptions for a customer: 
 
