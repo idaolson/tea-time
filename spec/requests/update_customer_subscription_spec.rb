@@ -20,9 +20,6 @@ RSpec.describe "Patch subscription status" do
     expect(response).to be_successful
     expect(result[:response]).to eq("Subscription cancelled")  
 
-    body = {
-      "id": subscription.id
-    }
     patch "/api/v1/subscriptions/#{subscription.id}"
 
     result = JSON.parse(response.body, symbolize_names: true)
