@@ -14,10 +14,7 @@ RSpec.describe "Patch subscription status" do
   it "changes the subscription status from active to cancelled and from cancelled to active" do 
     subscription = Subscription.create!(title: 'My weekly oolong', price: 7.99, status: 'active', frequency: 7, quantity: 2, customer_id: @customer1.id, tea_id: @tea2.id)
 
-    body = {
-      "id": subscription.id
-    }
-    patch '/api/v1/subscriptions', params: body, as: :json
+    patch "/api/v1/subscriptions/#{subscription.id}"
 
     result = JSON.parse(response.body, symbolize_names: true)
     expect(response).to be_successful
@@ -26,7 +23,7 @@ RSpec.describe "Patch subscription status" do
     body = {
       "id": subscription.id
     }
-    patch '/api/v1/subscriptions', params: body, as: :json
+    patch "/api/v1/subscriptions/#{subscription.id}"
 
     result = JSON.parse(response.body, symbolize_names: true)
     expect(response).to be_successful
