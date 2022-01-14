@@ -47,7 +47,20 @@ Rails API for a Tea Subscription Service
    }
    
    ```
-
+   
+   - Successful response - 201 Created
+   ```json
+   {
+      "response": "Subscription created!"
+   }
+   ```
+   - Failed response - 400 Bad Request
+   ```json
+   {
+      "error": "Missing data."
+   }
+   ```
+   
 ### Cancel a subscription: 
 
   - PATCH    /api/v1/subscriptions/:id
